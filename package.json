@@ -159,7 +159,8 @@
   "prettier": "@shopify/prettier-config",
   "stylelint": {
     "extends": [
-      "@shopify/stylelint-plugin/prettier"
+      "@shopify/stylelint-plugin/prettier",
+      "./polaris-stylelint/requireTokens.js"
     ]
   },
   "size-limit": [
