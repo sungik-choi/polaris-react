@@ -1,6 +1,6 @@
 ## Purpose
 
-This stylelint plugin will warn devs when they are declaring a CSS property without a valid polaris token. Hopefully, this will reduce the amount of custom code that get's written when there should be a polaris token value in it's place instead.
+This stylelint plugin will warn devs when they are declaring a CSS property without a valid polaris token. Hopefully, this will reduce the amount of custom code that get's written when there should be a polaris token value in its place instead.
 
 ## Example
 
@@ -42,6 +42,7 @@ Packages up polaris specific rules. Right now it's just using the built-in style
 ## Next steps
 
 [ ] Add the rest of the properties and allowed values
+[ ] add a custom error message to prompt dev to use polaris custom props
 [ ] Resolve all linter errors by updating rules OR updating the CSS files to adhere to rules
 [ ] Test in `Shopify/web`
 [ ] package up for realz
