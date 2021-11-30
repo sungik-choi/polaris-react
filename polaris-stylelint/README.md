@@ -41,9 +41,9 @@ Packages up polaris specific rules. Right now it's just using the built-in style
 
 ## Next steps
 
-[ ] Add the rest of the properties and allowed values
-[ ] add a custom error message to prompt dev to use polaris custom props
-[ ] Resolve all linter errors by updating rules OR updating the CSS files to adhere to rules
-[ ] Test in `Shopify/web`
-[ ] package up for realz
-[ ] profit
+- [ ] Add the rest of the properties and allowed values
+- [ ] add a custom error message to prompt dev to use polaris custom props
+- [ ] Resolve all linter errors by updating rules OR updating the CSS files to adhere to rules
+- [ ] Test in `Shopify/web`
+- [ ] package up for realz
+- [ ] profit
