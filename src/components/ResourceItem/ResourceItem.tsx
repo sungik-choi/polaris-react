@@ -13,6 +13,7 @@ import type {ThumbnailProps} from '../Thumbnail';
 import {ButtonGroup} from '../ButtonGroup';
 import {Checkbox} from '../Checkbox';
 import {Button, buttonsFrom} from '../Button';
+import {FocusRing} from '../FocusRing';
 import {
   ResourceListContext,
   SELECT_ALL_ITEMS,
@@ -300,6 +301,7 @@ class BaseResourceItem extends Component<CombinedProps, State> {
         external={external}
         tabIndex={tabIndex}
         id={this.overlayId}
+        ref={this.buttonOverlay}
       />
     ) : (
       <button
@@ -312,7 +314,7 @@ class BaseResourceItem extends Component<CombinedProps, State> {
         ref={this.buttonOverlay}
       />
     );
-
+    console.log(focused && !focusedInner);
     return (
       <li className={listItemClassName} data-href={dataHref}>
         <div className={styles.ItemWrapper}>

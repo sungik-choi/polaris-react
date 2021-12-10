@@ -1,4 +1,4 @@
-import React, {Component, createRef} from 'react';
+import React, {Component, createRef, RefObject} from 'react';
 import {
   SearchMinor,
   ChevronUpMinor,
@@ -15,6 +15,7 @@ import {WithinFilterContext} from '../../utilities/within-filter-context';
 import {Button} from '../Button';
 import {DisplayText} from '../DisplayText';
 import {Collapsible} from '../Collapsible';
+import {FocusRing} from '../FocusRing';
 import {Scrollable} from '../Scrollable';
 import {ScrollLock} from '../ScrollLock';
 import {Icon} from '../Icon';
@@ -123,6 +124,7 @@ class FiltersInner extends Component<CombinedProps, State> {
   private moreFiltersButtonContainer = createRef<HTMLDivElement>();
   private moreFiltersDoneButtonContainer = createRef<HTMLDivElement>();
   private focusNode = createRef<HTMLDivElement>();
+  private buttonRefs: RefObject<HTMLButtonElement>[] = [];
 
   render() {
     const {
@@ -174,11 +176,13 @@ class FiltersInner extends Component<CombinedProps, State> {
       ) : null;
 
       const collapsibleID = `${filter.key}Collapsible`;
+      this.buttonRefs[index] = createRef();
 
       const buttonClassName = classNames(styles.FilterTrigger);
 
       return (
         <div key={filter.key} className={className}>
+          <FocusRing boundingNode={this.buttonRefs[index]} />
           <button
             onClick={() => this.toggleFilter(filter.key)}
             className={buttonClassName}
@@ -186,6 +190,7 @@ class FiltersInner extends Component<CombinedProps, State> {
             type="button"
             aria-controls={collapsibleID}
             aria-expanded={filterIsOpen}
+            ref={this.buttonRefs[index]}
           >
             <div className={styles.FilterTriggerLabelContainer}>
               <h3 className={styles.FilterTriggerTitle}>
