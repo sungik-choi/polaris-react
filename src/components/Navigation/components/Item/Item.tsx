@@ -245,7 +245,9 @@ export function Item({
   const itemClassName = classNames(
     styles.Item,
     disabled && styles['Item-disabled'],
-    selected && subNavigationItems.length === 0 && styles['Item-selected'],
+    selected &&
+      (subNavigationItems.length === 0 || selectedOverride) &&
+      styles['Item-selected'],
     showExpanded && styles.subNavigationActive,
     keyFocused && styles.keyFocused,
   );
